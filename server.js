@@ -122,10 +122,10 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
-app.get('/api/:plantName', (request,response) => {
-    const plantsName = request.params.plantName.toLowerCase()
-    if(plants[plantsName]){
-       response.json(plants[plantsName]) 
+app.get('/api/:bloomPeriod', (request,response) => {
+    const bloomPeriod = request.params.bloomPeriod.toLowerCase()
+    if(plants[bloomPeriod]){
+       response.json(plants[bloomPeriod]) 
     } else {
         response.json(plants['Not found'])
     }
